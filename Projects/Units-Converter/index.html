@@ -55,20 +55,34 @@
                 </li>
             </ul>
             <!-- Tab panes -->
-            <div class="tab-content mt-2 ms-4">
+            <div class="tab-content mt-2 ms-4 me-4">
                 <div class="row">
                     <div class="col">
-                        <label for="calcFrom" class="form-label">From:</label>
+                        <label for="calcFromInput" class="form-label">To:</label>
                         <input type="number" name="calcFrom" class="form-control" id=calcFrom>
                     </div>
                     <div class="col">
-                        <label for="calcTo" class="form-label">From:</label>
+                        <label for="calcToInput" class="form-label">From:</label>
                         <input type="number" name="calcTo" class="form-control" id=calcTo disabled readonly>
                     </div>
                 </div>
+                
+                <div class="row mt-2">
+                    <div class="col">
+                        <select name="calcFromSelect" id="calcFromSelect" onchange="calc()" size="11" class="form-select">
+
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select name="calcToSelect" id="calcToSelect" onchange="calc()" size="11" class="form-select">
+
+                        </select>
+                    </div>
+                </div>
+                
                 <div class="tab-pane fade show active" id="length" role="tabpanel" aria-labelledby="length-tab">
                     <h3>Length Conversion</h3>
-                    
+                    <p>Content for Length conversion.</p>
                 </div>
                 <div class="tab-pane fade" id="temperature" role="tabpanel" aria-labelledby="temperature-tab">
                     <h3>Temperature Conversion</h3>
