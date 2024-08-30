@@ -85,4 +85,5 @@ function handleTabClick(event) {
 
 document.addEventListener('DOMContentLoaded', () => {
     populateSelects(lengthArray);
+    document.getElementById("calcToInput").inert = true;
 });
