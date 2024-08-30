@@ -11,12 +11,31 @@ function calculateResult() {
         return;
     }
 
-    // Obter os valores de conversão das unidades selecionadas
-    let fromUnitValue = parseFloat(fromSelect.value);
-    let toUnitValue = parseFloat(toSelect.value);
+    // Obter as unidades selecionadas
+    let fromUnit = fromSelect.options[fromSelect.selectedIndex].text;
+    let toUnit = toSelect.options[toSelect.selectedIndex].text;
 
-    // Calcular o valor convertido
-    let result = inputValue * fromUnitValue * toUnitValue;
+    let result;
+
+    // Verificar se a conversão é de temperatura
+    if (fromUnit === "Celsius" && toUnit === "Fahrenheit") {
+        result = (inputValue * 9/5) + 32;
+    } else if (fromUnit === "Fahrenheit" && toUnit === "Celsius") {
+        result = (inputValue - 32) * 5/9;
+    } else if (fromUnit === "Celsius" && toUnit === "Kelvin") {
+        result = inputValue + 273.15;
+    } else if (fromUnit === "Kelvin" && toUnit === "Celsius") {
+        result = inputValue - 273.15;
+    } else if (fromUnit === "Fahrenheit" && toUnit === "Kelvin") {
+        result = (inputValue - 32) * 5/9 + 273.15;
+    } else if (fromUnit === "Kelvin" && toUnit === "Fahrenheit") {
+        result = (inputValue - 273.15) * 9/5 + 32;
+    } else {
+        // Outras conversões (não de temperatura)
+        let fromUnitValue = parseFloat(fromSelect.value);
+        let toUnitValue = parseFloat(toSelect.value);
+        result = inputValue * fromUnitValue * toUnitValue;
+    }
 
     // Atualizar o campo de saída
     updateResult(result);
