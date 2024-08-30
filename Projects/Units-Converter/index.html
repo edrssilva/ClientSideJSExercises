@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Units Converter</title>
 
     <link rel="stylesheet" href="units-style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-    <script src="scripts/measurements-units.js"></script>
 
 </head>
 <body>
@@ -62,11 +61,11 @@
                     <div class="row">
                         <div class="col">
                             <label for="calcFromInput" class="form-label">To:</label>
-                            <input type="number" name="calcFrom" class="form-control" id=calcFrom>
+                            <input type="number" name="calcFrom" class="form-control" id="calcFromInput">
                         </div>
                         <div class="col">
                             <label for="calcToInput" class="form-label">From:</label>
-                            <input type="number" name="calcTo" class="form-control" id=calcTo disabled readonly>
+                            <input type="number" name="calcTo" class="form-control" id="calcToInput" readonly>
                         </div>
                     </div>
                 </form>
@@ -110,6 +109,12 @@
                 </div>
             </div>
         </section>
+
+        
     </main>
+
+    
+    <script src="scripts/measurements-units.js"></script>
+    <script src="scripts/convertions.js"></script>
 </body>
 </html>
